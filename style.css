@@ -1,0 +1,698 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ======================
+   LAYOUT CHUNG
+   ====================== */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+/* ======================
+     HEADER
+     ====================== */
+header {
+  position: relative;
+  /* tạo stacking context */
+  height: 80vh;
+  background: url("hobby.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  /* z-index thấp */
+}
+
+header .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+header .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+header img.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #61dafb;
+}
+
+header h1 {
+  margin-top: 20px;
+  font-size: 3rem;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* ======================
+     EXPERIENCE
+     ====================== */
+#experience {
+  position: relative;
+  /* stacking context */
+  z-index: 1;
+  /* cao hơn header */
+  padding: 100px 0;
+  background: #111;
+  /* đảm bảo cover header dưới */
+}
+
+.experience-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.experience-item {
+  flex: 0 0 calc(33.333% - 20px);
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+/* Staircase desktop */
+.experience-item:nth-child(3n + 2) {
+  margin-top: 60px;
+}
+
+.experience-item:nth-child(3n + 3) {
+  margin-top: 120px;
+}
+
+.experience-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experience-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* ======================
+     LIGHTBOX (giữ z-index thấp)
+     ====================== */
+#lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  /* vẫn dưới .content nhưng trên #experience */
+}
+
+/* Music Player */
+.music-player {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 120px;
+  background: #1e1e1e;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  margin: 40px auto 0;
+  padding: 10px;
+}
+
+.music-player .cover {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.music-player .info .title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.music-player .controls {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.music-player button {
+  background: #333;
+  border: none;
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.music-player button:hover {
+  background: #555;
+}
+
+/* Volume Control */
+.music-player .volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.music-player .volume-control label {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.music-player .volume-control input {
+  width: 150px;
+  height: 5px;
+  background: #444;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.music-player .volume-control input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #61dafb;
+  border-radius: 50%;
+}
+
+.music-player .volume-control input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #61dafb;
+  border-radius: 50%;
+}
+
+/* Lightbox */
+#lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#lightboxOverlay img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#lightboxPrev {
+  left: 20px;
+}
+
+#lightboxNext {
+  right: 20px;
+}
+
+#lightboxClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+}
+
+.project-info {
+  top: 100px;
+  background: rgba(30, 30, 30, 0.9);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  align-self: start;
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  perspective: 800px;
+}
+
+.parallax-3d {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
+}
+
+.parallax-3d:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.hobbies-section {
+  padding: 80px 20px;
+  background: #111;
+  color: #f0f0f0;
+}
+
+.hobbies-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 800px;
+}
+
+.hobbies-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.hobbies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.hobby-item {
+  font-size: 1.5rem;
+  margin: 40px 0;
+  padding: 20px;
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 8px;
+  transform-origin: left center;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.hobby-item:nth-child(1) {
+  margin-top: 0;
+}
+
+.hobby-item:nth-child(2) {
+  margin-left: 20px;
+}
+
+.hobby-item:nth-child(3) {
+  margin-left: 40px;
+}
+
+.hobby-item:nth-child(4) {
+  margin-left: 60px;
+}
+
+.hobby-item.visible {
+  opacity: 1;
+  transform: translateZ(0) rotateY(0deg);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.hobby-item {
+  transform: translateZ(-100px) rotateY(30deg);
+}
+
+/* Contact */
+#contact {
+  padding: 80px 0;
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+#contact .contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#contact img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+/* Comments */
+#comments {
+  padding: 80px 0;
+  background: #222;
+}
+
+#comments h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #61dafb;
+}
+
+.comment-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #161616;
+  color: #eee;
+}
+
+.comment-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #61dafb;
+  color: #111;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comment-form button:hover {
+  opacity: 0.9;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+#contact .link-item img {
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+#contact .link-item:hover img {
+  transform: perspective(500px) rotateX(20deg) rotateY(10deg) scale(1.15);
+}
+
+/* Điểm ngắt cho tablet (≤ 992px) */
+@media (max-width: 992px) {
+  /* Header */
+  header {
+    height: 60vh;
+    padding: 0 20px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  /* Music Player */
+  .music-player {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 120px;
+    background: #1e1e1e;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    margin: 40px auto 0;
+    padding: 10px;
+  }
+
+  .music-player .cover {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  .music-player .info .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .music-player .controls {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .music-player button {
+    background: #333;
+    border: none;
+    color: white;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+
+  .music-player button:hover {
+    background: #555;
+  }
+
+  /* Experience grid */
+  .experience-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .experience-item:nth-child(3n + 2),
+  .experience-item:nth-child(3n + 3) {
+    margin-top: 0;
+  }
+
+  /* Project container */
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-container .project-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Comments & Contact */
+  #contact .contact-container,
+  #comments .comment-form {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+/* RESPONSIVE MEDIA QUERIES      */
+@media (max-width: 576px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Header chữ nhỏ hơn, avatar nhỏ hơn */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header img.avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Music Player chỉ còn biểu tượng */
+  .music-player {
+    max-width: 80%;
+    padding: 9px;
+  }
+
+  .music-player button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  /* Experience: 1 cột staircase */
+  .experience-item {
+    flex: 0 0 100%;
+    margin-top: 0;
+    /* reset */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  /* Các item chẵn lùi xuống 60px để tạo thang */
+  .experience-item:nth-child(2n + 2) {
+    margin-top: 60px;
+  }
+
+  /* Project images: 1 cột */
+  .project-images {
+    grid-template-columns: 1fr;
+  }
+
+  .hobbies-item-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    /* để cả 2 cột bằng chiều cao */
+  }
+
+  .hobbies-image {
+    flex: 1;
+    /* ảnh chiếm 1 phần */
+  }
+
+  .hobbies-image img {
+    width: 120%;
+    height: 103%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .hobbies-list {
+    flex: 1;
+    /* list chiếm 1 phần (bằng ảnh) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* trải đều các mục theo chiều cao */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hobby-item {
+    background: rgba(30, 30, 30, 0.8);
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 5px;
+  }
+
+  /* Form Comments */
+  #comments .comment-form input,
+  #comments .comment-form textarea {
+    font-size: 0.9rem;
+  }
+
+  #comments .comment-form button {
+    font-size: 1rem;
+  }
+}
