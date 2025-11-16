@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="icon" href="assets/images/icon.ico" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="overlay absolute inset-0 bg-black/60"></div>
+      <div
+        class="content relative z-10 flex flex-col items-center justify-center text-center px-4"
+      >
+        <img
+          src="assets/images/avatar1.jpg"
+          alt="My Avatar"
+          class="avatar w-48 h-48 rounded-full border-4 border-[#61dafb]"
+        />
+        <h1 class="mt-6 text-4xl font-extrabold text-white">Tai Nguyen Huu</h1>
+        <p class="mt-2 text-lg text-gray-200">
+          Code your moments, capture your dreams.
+        </p>
+        <div class="music-player">
+          <div
+            class="cover"
+            style="background-image: url('assets/images/music-picture.jpg')"
+          ></div>
+          <div class="info">
+            <div class="title">Prelude: Seesaw</div>
+            <div class="controls">
+              <button id="prev-btn" class="btn btn-outline-light me-2">
+                <i class="bi bi-skip-backward-fill"></i>
+              </button>
+              <button id="play-btn" class="btn btn-outline-light me-2">
+                <i class="bi bi-play-fill"></i>
+              </button>
+              <button id="next-btn" class="btn btn-outline-light">
+                <i class="bi bi-skip-forward-fill"></i>
+              </button>
+            </div>
+
+            <div class="volume-control">
+              <i class="bi bi-volume-up-fill"></i>
+              <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.5"
+              />
+            </div>
+          </div>
+          <audio
+            id="bg-music"
+            src="assets/music.mp3"
+            autoplay
+            loop
+            muted
+          ></audio>
+        </div>
+      </div>
+    </header>
+    <!-- About Section -->
+    <section
+      id="about"
+      class="flex flex-col md:flex-row items-center justify-center py-20 px-4 bg-[#0a0a0a] text-white"
+    >
+      <div class="flex-1 text-center md:text-left mb-8 md:mb-0">
+        <img
+          src="assets/images/avatar1.jpg"
+          alt="Nguyen Huu Tai"
+          class="mx-auto max-w-xs w-full rounded-2xl shadow-xl"
+        />
+      </div>
+      <div class="flex-1 md:pl-12">
+        <h2 class="text-4xl font-bold mb-6">Hello there!</h2>
+        <p class="text-lg leading-relaxed">
+          My name is <strong>Tai Nguyen Huu</strong>, born in 2005, and I am
+          from Vinh Long, Vietnam. I am currently pursuing a degree in Software
+          Engineering at FPT University.<br /><br />
+          I am deeply passionate about technology and always eager to explore
+          emerging trends, embracing challenges that provide valuable learning
+          opportunities.<br /><br />
+          This website serves as my portfolio, where I present my projects,
+          skills, and areas of interest. Please feel free to explore and join me
+          on my professional journey.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Experience Layout -->
+      <section id="experience">
+        <h2 class="text-3xl font-extrabold text-center mb-12 text-white">
+          My Experiences At University
+        </h2>
+        <div class="experience-grid">
+          <div class="experience-item">
+            <img src="assets/images/pic1.jpg" alt="Experience 1" />
+          </div>
+          <div class="experience-item">
+            <img src="assets/images/pic2.jpg" alt="Experience 2" />
+          </div>
+          <div class="experience-item">
+            <img src="assets/images/pic3.jpg" alt="Experience 3" />
+          </div>
+          <div class="experience-item">
+            <img src="assets/images/pic4.jpg" alt="Experience 4" />
+          </div>
+          <div class="experience-item">
+            <img src="assets/images/pic5.jpg" alt="Experience 5" />
+          </div>
+          <div class="experience-item">
+            <img src="assets/images/pic6.jpg" alt="Experience 6" />
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section -->
+      <section id="projects">
+        <div class="container">
+          <h2 class="text-3xl font-extrabold text-center mb-12 text-white">
+            My Projects
+          </h2>
+          <div class="project-container">
+            <div class="project-info">
+              <h3 class="text-2xl font-semibold">Tetris Game (Java Swing)</h3>
+              <br />
+              <p>
+                A classic Tetris implementation built with Java Swing. Features
+                include:
+              </p>
+              <br />
+
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Dynamic levels &amp; increasing speed</li>
+                <br />
+
+                <li>Scoring and ranking board</li>
+                <br />
+                <li>Customizable controls and themes</li>
+              </ul>
+            </div>
+            <div class="project-images" id="tetris-images">
+              <img
+                src="assets/images/pjgame4.jpg"
+                alt="Screen 4"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/pjgame3.jpg"
+                alt="Screen 3"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/pjgame6.jpg"
+                alt="Screen 6"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/pjgame1.jpg"
+                alt="Screen 1"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/pjgame2.jpg"
+                alt="Screen 2"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/pjgame5.jpg"
+                alt="Screen 5"
+                class="project-screenshot"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="my-16 border-gray-1000 opacity-50" />
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <div class="container">
+          <div class="project-container">
+            <div class="project-info">
+              <h3 class="text-2xl font-semibold">
+                Cafe Management Website (Java Spring Boot) still in development
+              </h3>
+              <br />
+
+              <p>
+                A comprehensive cafe management system built with Spring Boot,
+                Thymeleaf, and Spring Security. Features include:
+              </p>
+              <br />
+
+              <ul class="list-disc pl-5 space-y-1">
+                <li>
+                  A Point of Sale (POS) system for creating and tracking orders.
+                </li>
+                <br />
+
+                <li>
+                  Management of products, table bookings, vouchers, staff, and
+                  customers.
+                </li>
+                <br />
+
+                <li>
+                  Integrated customer loyalty points system and order history
+                  tracking.
+                </li>
+              </ul>
+            </div>
+            <div class="project-images" id="cafe-images">
+              <img
+                src="assets/images/picture1.png"
+                alt="Screen 1"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/picture2.png"
+                alt="Screen 2"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/picture3.png"
+                alt="Screen 3"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/picture4.png"
+                alt="Screen 4"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/picture5.png"
+                alt="Screen 5"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/picture6.png"
+                alt="Screen 4"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/picture8.png"
+                alt="Screen 4"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/picture7.png"
+                alt="Screen 5"
+                class="project-screenshot"
+              />
+              <img
+                src="assets/images/picture9.png"
+                alt="Screen 4"
+                class="project-screenshot"
+              />
+            </div>
+          </div>
+          <div class="more-projects text-center mt-12">
+            <a
+              href="https://github.com/tobynguyen2005"
+              target="_blank"
+              class="inline-flex items-center space-x-2 bg-white text-black px-5 py-2 rounded-full shadow-md hover:scale-105 transition"
+            >
+              <img
+                src="assets/images/github.png"
+                alt="GitHub Logo"
+                class="w-6 h-6"
+              />
+              <span>Explore more of my projects on GitHub.</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <br />
+      <br />
+      <br />
+
+      <!-- Certificates Section -->
+      <section id="certificates" class="py-20 bg-[#0a0a0a] text-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-extrabold text-center mb-12">
+            My Certificates
+          </h2>
+
+          <!-- My Specializations -->
+          <h3 class="text-2xl font-semibold mb-8 text-center">
+            Specializations
+          </h3>
+          <div
+            class="featured-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          >
+            <!-- Specialization 1 -->
+            <div
+              class="certificate-item bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
+              <img
+                src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~4TGAO1NFXPZI/CERTIFICATE_LANDING_PAGE~4TGAO1NFXPZI.jpeg"
+                alt="User Experience Research and Design"
+                class="w-full h-60 object-cover"
+              />
+              <div class="p-5">
+                <h4 class="text-lg font-semibold mb-2">
+                  User Experience Research and Design
+                </h4>
+                <p class="text-gray-400 text-sm">
+                  Integrate UX research and design to create user-centered
+                  products through research, prototyping, and testing.
+                </p>
+              </div>
+            </div>
+
+            <!-- Specialization 2 -->
+            <div
+              class="certificate-item bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
+              <img
+                src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~L27MERKM6A6B/CERTIFICATE_LANDING_PAGE~L27MERKM6A6B.jpeg"
+                alt="Software Development Lifecycle"
+                class="w-full h-60 object-cover"
+              />
+              <div class="p-5">
+                <h4 class="text-lg font-semibold mb-2">
+                  Software Development Lifecycle
+                </h4>
+                <p class="text-gray-400 text-sm">
+                  Learn SDLC methods like Agile, Lean, and Waterfall to design,
+                  analyze, and improve software processes.
+                </p>
+              </div>
+            </div>
+
+            <!-- Specialization 3 -->
+            <div
+              class="certificate-item bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
+              <img
+                src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~MXYIBOYI35HD/CERTIFICATE_LANDING_PAGE~MXYIBOYI35HD.jpeg"
+                alt="Web Design for Everybody: Basics of Web Development & Coding"
+                class="w-full h-60 object-cover"
+              />
+              <div class="p-5">
+                <h4 class="text-lg font-semibold mb-2">
+                  Web Design for Everybody: Basics of Web Development & Coding
+                </h4>
+                <p class="text-gray-400 text-sm">
+                  HTML, CSS, and JavaScript to create responsive, user-friendly,
+                  and accessible web experiences.
+                </p>
+              </div>
+            </div>
+
+            <!-- Specialization 4 -->
+            <div
+              class="certificate-item bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
+              <img
+                src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~34SJ4M5ZMMZV/CERTIFICATE_LANDING_PAGE~34SJ4M5ZMMZV.jpeg"
+                alt="Academic Skills for University Success"
+                class="w-full h-60 object-cover"
+              />
+              <div class="p-5">
+                <h4 class="text-lg font-semibold mb-2">
+                  Academic Skills for University Success
+                </h4>
+                <p class="text-gray-400 text-sm">
+                  Develop academic skills and cultural awareness for success in
+                  English-medium universities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- My Courses -->
+          <h3 class="text-2xl font-semibold mb-8 text-center">Courses</h3>
+          <div
+            class="more-certificates grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
+          >
+            <!-- 10 Courses -->
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~ZF2DEHDCRHE4/CERTIFICATE_LANDING_PAGE~ZF2DEHDCRHE4.jpeg"
+              alt="Course 1"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~3350EA6S1DK7/CERTIFICATE_LANDING_PAGE~3350EA6S1DK7.jpeg"
+              alt="Course 2"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~W2EU1JKVRFBZ/CERTIFICATE_LANDING_PAGE~W2EU1JKVRFBZ.jpeg"
+              alt="Course 3"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~749KFQ0FTW50/CERTIFICATE_LANDING_PAGE~749KFQ0FTW50.jpeg"
+              alt="Course 4"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~Y27WMOUH1CWL/CERTIFICATE_LANDING_PAGE~Y27WMOUH1CWL.jpeg"
+              alt="Course 5"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~2Y3U1VLU0537/CERTIFICATE_LANDING_PAGE~2Y3U1VLU0537.jpeg"
+              alt="Course 6"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~6HVWJA61L605/CERTIFICATE_LANDING_PAGE~6HVWJA61L605.jpeg"
+              alt="Course 7"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~D656SKCN4EXD/CERTIFICATE_LANDING_PAGE~D656SKCN4EXD.jpeg"
+              alt="Course 8"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~Q2E74C26UWPS/CERTIFICATE_LANDING_PAGE~Q2E74C26UWPS.jpeg"
+              alt="Course 9"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            <img
+              src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~VJDF8L6BVEQF/CERTIFICATE_LANDING_PAGE~VJDF8L6BVEQF.jpeg"
+              alt="Course 10"
+              class="cert-thumb rounded-xl shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Hobbies -->
+      <section id="hobbies" class="hobbies-section">
+        <h2 class="text-3xl font-extrabold text-center mb-12 text-white">
+          My Hobbies
+        </h2>
+        <div class="hobbies-container">
+          <!-- Left: Your avatar or photo -->
+          <div class="hobbies-image">
+            <img src="assets/images/hobbie.jpg" alt="My Photo" />
+          </div>
+          <!-- Right: List of hobbies -->
+          <ul class="hobbies-list">
+            <li class="hobby-item">Music</li>
+            <li class="hobby-item">Traveling</li>
+            <li class="hobby-item">Coding</li>
+            <li class="hobby-item">Language learning</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-16 px-6 text-white max-w-5xl mx-auto">
+        <h2 class="text-3xl font-extrabold mb-12 text-center">Get In Touch</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center">
+          <div class="flex justify-center space-x-8">
+            <a
+              href="https://linkedin.com/in/tai-nguyenhuu0903"
+              target="_blank"
+              class="link-item"
+            >
+              <img
+                src="assets/images/linkedin.png"
+                alt="LinkedIn"
+                class="w-12 h-12 object-contain"
+              />
+            </a>
+
+            <a
+              href="mailto:tainh.ce190284@gmail.com"
+              class="link-item"
+              target="_blank"
+            >
+              <img
+                src="assets/images/gmail.png"
+                alt="Email"
+                class="w-12 h-12 object-contain"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/tainh932005/"
+              target="_blank"
+              class="link-item"
+            >
+              <img
+                src="assets/images/facebook.png"
+                alt="Facebook"
+                class="w-12 h-12 object-contain"
+              />
+            </a>
+
+            <a href="#" id="zalo-btn" class="link-item">
+              <img
+                src="assets/images/zalo.png"
+                alt="Zalo"
+                class="w-12 h-12 object-contain cursor-pointer"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="comments"
+        class="py-16 px-6 max-w-3xl mx-auto bg-transparent"
+      >
+        <div id="comment-list" class="mt-12 space-y-10"></div>
+      </section>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightboxOverlay">
+      <button id="lightboxClose">×</button>
+      <button class="lightbox-btn" id="lightboxPrev">⟨</button>
+      <img src="" alt="Preview" />
+      <button class="lightbox-btn" id="lightboxNext">⟩</button>
+    </div>
+
+    <!-- Zalo QR -->
+    <div id="zaloPopup" class="popup hidden">
+      <div class="popup-content">
+        <span id="closePopup">&times;</span>
+        <img
+          src="assets/images/zalo-qr.png"
+          alt="Zalo QR Code"
+          class="qr-image"
+        />
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; 2025 Tai Nguyen Huu. All rights reserved.</footer>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
